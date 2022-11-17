@@ -1,0 +1,55 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.01rem;
+    text-align: center;
+    flex-direction: row;
+    
+}
+
+.login-card{
+    width:25rem;
+    /* height:30rem; */
+    padding: 2rem;
+    border : 1px solid #ccc;
+}
+
+.bottom-card{
+    width:25rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border : 1px solid #ccc;
+}
+
+.carbg{
+    background: url('../assets/phone2.jpg');
+    background-size: cover;
+    height: 581px;
+    width: 380px;
+    position: relative;
+}
+
+.car{
+    position: absolute;
+    height: 1000px;
+    width: 264px;
+    top: 97px;
+    left: 58px;
+    
+}
+
+@media only screen and (max-width:800px){
+    .login-card{
+        width:15rem
+    }
+    .bottom-card{
+        width:15rem
+    }
+}
+
+@media only screen and (max-width:500px){
+        .carbg{
+        display: none;
+    }
+}
