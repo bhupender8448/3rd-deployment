@@ -58,13 +58,20 @@ function Post({postData, userData}) {
 
 
     }
-    const handleScroll = (e) => {
-      let next = ReactDOM.findDOMNode(e.target).parentNode.nextSibling
-      if(next){
-        next.scrollIntoView()
-        // e.target.muted = true
-      }
-    }
+    // const handleScroll = (e) => {
+    //   let next = ReactDOM.findDOMNode(e.target).parentNode.nextSibling
+    //   if(next){
+    //     next.scrollIntoView()
+    //     e.target.muted = true
+    //   }
+    // }
+    // onEnded={handleScroll}
+
+
+
+
+
+
 
     // const handlePause = (e) => {
 
@@ -82,7 +89,7 @@ function Post({postData, userData}) {
 
   return (
     <div className="post-container">
-          <video src={postData.postUrl}  muted="muted"  onClick={handleClick} onEnded={handleScroll} ref={videoRef} />
+          <video src={postData.postUrl}  muted="muted"  onClick={handleClick}  ref={videoRef} />
           <div className="videos-info">
             <div className="avatar_container">
                 <Avatar alt="Remy Sharp" src={postData.profileUrl} sx={{margin:"0.5rem"}}/>
