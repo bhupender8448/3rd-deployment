@@ -1,11 +1,11 @@
 import { Avatar } from '@mui/material'
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { AuthContext } from '../context/auth';
 import { async } from '@firebase/util';
 import { arrayRemove, arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
-// import { ReactDOM } from 'react';
+import ReactDOM from 'react-dom'
 
 function Post({postData, userData}) {
     console.log(postData);
@@ -13,6 +13,16 @@ function Post({postData, userData}) {
 
     const {user} = useContext(AuthContext)
     const [like,setLike] = useState(false)
+
+
+    const [playPause,setPlayPause] = useState(false)
+
+
+    const videoRef = useRef();
+
+
+
+
 
     useEffect(() => {
       if(postData.likes.includes(user.uid)){
@@ -34,14 +44,34 @@ function Post({postData, userData}) {
     const handleClick = (e) => {
       e.preventDefault();
       e.target.muted = !e.target.muted
+
+      // videoRef.current.play();
+
+      if(playPause == false){
+        videoRef.current.play();
+        setPlayPause(true)
+        
+      }else{
+        videoRef.current.pause();
+        setPlayPause(false)
+      }
+
+
     }
-    // const handleScroll = (e) => {
-    //   let next = ReactDOM.findDOMNode(e.target).parentNode.nextSibling
-    //   if(next){
-    //     next.scrollIntoView()
-    //     e.target.muted = true
-    //   }
+    const handleScroll = (e) => {
+      let next = ReactDOM.findDOMNode(e.target).parentNode.nextSibling
+      if(next){
+        next.scrollIntoView()
+        // e.target.muted = true
+      }
+    }
+
+    // const handlePause = (e) => {
+
+    //   videoRef.current.pause();
+      
     // }
+    // onDoubleClick={handlePause}
 
     // onEnded={handleScroll}
 
@@ -52,7 +82,7 @@ function Post({postData, userData}) {
 
   return (
     <div className="post-container">
-          <video src={postData.postUrl} autoPlay muted="muted" onClick={handleClick} />
+          <video src={postData.postUrl}  muted="muted"  onClick={handleClick} onEnded={handleScroll} ref={videoRef} />
           <div className="videos-info">
             <div className="avatar_container">
                 <Avatar alt="Remy Sharp" src={postData.profileUrl} sx={{margin:"0.5rem"}}/>
