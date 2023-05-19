@@ -107,7 +107,7 @@ import { getAnalytics } from "firebase/analytics";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional have done
 const firebaseConfig = {
   apiKey: "AIzaSyBN8rNnQ3gfpa1IfeiUrMVC8W_CxV9xOW4",
   authDomain: "ndinterveiw.firebaseapp.com",
