@@ -53,30 +53,71 @@
 
 
 
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import {getAuth} from 'firebase/auth';
+// import {getStorage} from 'firebase/storage';
+// import {getFirestore} from 'firebase/firestore';
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCuiNFMjLdKpnQC1WZk8R2Bj_MMYM89MNo",
+//   authDomain: "hellow-c132c.firebaseapp.com",
+//   projectId: "hellow-c132c",
+//   storageBucket: "hellow-c132c.appspot.com",
+//   messagingSenderId: "1007556629344",
+//   appId: "1:1007556629344:web:7fb4b56b7fb80f52430405"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+
+
+// const auth = getAuth();
+// const storage = getStorage();
+// const db = getFirestore();
+// export { auth,storage,db }
+// export default app;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth} from 'firebase/auth';
-import {getStorage} from 'firebase/storage';
-import {getFirestore} from 'firebase/firestore';
+import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCuiNFMjLdKpnQC1WZk8R2Bj_MMYM89MNo",
-  authDomain: "hellow-c132c.firebaseapp.com",
-  projectId: "hellow-c132c",
-  storageBucket: "hellow-c132c.appspot.com",
-  messagingSenderId: "1007556629344",
-  appId: "1:1007556629344:web:7fb4b56b7fb80f52430405"
+  apiKey: "AIzaSyBN8rNnQ3gfpa1IfeiUrMVC8W_CxV9xOW4",
+  authDomain: "ndinterveiw.firebaseapp.com",
+  projectId: "ndinterveiw",
+  storageBucket: "ndinterveiw.appspot.com",
+  messagingSenderId: "423535912216",
+  appId: "1:423535912216:web:5665cf6d01e253cb10ea6d",
+  measurementId: "G-DE2NGHYL6D"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
-const auth = getAuth();
-const storage = getStorage();
-const db = getFirestore();
-export { auth,storage,db }
-export default app;
+const analytics = getAnalytics(app);
